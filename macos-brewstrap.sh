@@ -46,6 +46,7 @@ CASKS=(
    hostbuddy
    kitematic
    mamp
+   ngrok
    postman
    screaming-frog-seo-spider
    sequel-pro
