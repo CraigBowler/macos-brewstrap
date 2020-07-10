@@ -7,15 +7,18 @@
 # - Spark (App Store)
 # - SiteSucker (https://ricks-apps.com/osx/sitesucker/)
 
-echo "Starting Brewstrap"
+printf '\e[92mStarting macOS Brewstrap...'
 
 # If Homebrew is not installed on the system, it will be installed here
 if test ! $(which brew); then
-   echo "Homebrew not found. Installing Homebrew..."
+   printf '\n\n\e[33mHomebrew not found. \e[0mInstalling Homebrew...'
    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  printf '\n\n\e[0mHomebrew found. Continuing...'
 fi
 
 # Update homebrew packages
+printf '\nInitiating Homebrew update...\n'
 brew update
 
 PACKAGES=(
@@ -23,13 +26,13 @@ PACKAGES=(
    node
 )
 
-echo "Installing packages..."
+printf '\nInstalling packages...\n'
 brew install ${PACKAGES[@]}
 
-echo "Removing out of date packages..."
+printf '\n\nRemoving out of date packages...\n'
 brew cleanup
 
-echo "Installing cask..."
+printf '\n\nInstalling cask...\n'
 brew install cask
 
 CASKS=(
@@ -50,13 +53,45 @@ CASKS=(
    zoomus
 )
 
-echo "Installing cask apps..."
+printf '\n\nInstalling cask apps...\n'
 brew cask install ${CASKS[@]}
 
-echo "Updating npm..."
+printf '\n\nUpdating npm...\n'
 npm install -g npm
 
-echo "Installing global npm packages..."
+printf '\n\nInstalling global npm packages...\n'
 npm install -g sass
 
-echo "Brewstrap complete"
+printf '\n\nConfiguring macOS settings...'
+
+#Finder Settings
+defaults write com.apple.finder AppleShowAllFiles -string "YES" # Show hidden (.) files be default
+
+# Dock Settings
+defaults write com.apple.dock orientation -string "bottom"
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock mineffect -string "scale"
+defaults write com.apple.dock minimize-to-application -bool true
+defaults write com.apple.dock tilesize -int 50
+defaults write com.apple.dock magnification -bool false
+defaults write com.apple.dock autohide-time-modifier -float 0.5
+defaults write com.apple.dock autohide-delay -float 0
+
+# Mouse & Trackpad Settings
+defaults write -g com.apple.mouse.scaling -int 3
+defaults write -g com.apple.trackpad.scaling -float 0.875
+defaults write -g com.apple.trackpad.scrolling -float 0.4412
+defaults write -g com.apple.trackpad.forceClick -float 0.4412
+
+# System Preferences > Mission Control > Automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# Finder > View > As List
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Finder > View > Show Path Bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+sleep 3
+
+printf '\n\n\e[1;92mBrewstrap complete! \e[0m(Note that some of these changes require a logout/restart to take effect)\n\n'
