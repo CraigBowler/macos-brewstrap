@@ -15,6 +15,7 @@ If Homebrew does not exist on the current machine, it will install that first. T
  - Docker
  - Firefox
  - Google Chrome
+ - Macs Fan Control
  - MAMP
  - ngrok
  - Postman
