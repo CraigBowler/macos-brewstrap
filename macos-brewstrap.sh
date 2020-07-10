@@ -34,17 +34,11 @@ brew install cask
 
 CASKS=(
    1password
-   adobe-creative-cloud
    atom
-   balsamiq-mockups
-   clockify
-   codekit
    docker
-   dropbox
    firefox
    google-chrome
-   hostbuddy
-   kitematic
+   macs-fan-control
    mamp
    ngrok
    postman
@@ -52,9 +46,8 @@ CASKS=(
    sequel-pro
    slack
    sourcetree
-   spotify
    transmit
-   zeplin
+   zoomus
 )
 
 echo "Installing cask apps..."

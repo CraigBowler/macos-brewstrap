@@ -11,17 +11,10 @@ If Homebrew does not exist on the current machine, it will install that first. T
 
 ### Casks
  - 1Password
- - Adobe Creative Cloud
  - Atom
- - Balsamiq Mockups
- - Clockify
- - CodeKit
  - Docker
- - Dropbox
  - Firefox
  - Google Chrome
- - Hostbuddy
- - Kitematic
  - MAMP
  - ngrok
  - Postman
@@ -29,9 +22,8 @@ If Homebrew does not exist on the current machine, it will install that first. T
  - Sequel Pro
  - Slack
  - Sourcetree
- - Spotify
  - Transmit
- - Zeplin
+ - Zoom.us
 
 ### Others
 As part of installing Node/npm, this script will also globally install SASS via npm.
@@ -40,4 +32,3 @@ As part of installing Node/npm, this script will also globally install SASS via 
 There are other applications that cannot be installed via Homebrew as there are no casks available yet. These apps are:
 
  - Spark - Email App by Readdle (App Store)
- - SiteSucker (https://ricks-apps.com/osx/sitesucker/)
