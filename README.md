@@ -23,6 +23,7 @@ If Homebrew does not exist on the current machine, it will install that first. T
  - Hostbuddy
  - Kitematic
  - MAMP
+ - ngrok
  - Postman
  - Screaming Frog SEO Spider
  - Sequel Pro
