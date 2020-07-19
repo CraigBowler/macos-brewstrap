@@ -12,7 +12,7 @@ printf '\e[92mStarting macOS Brewstrap...'
 # If Homebrew is not installed on the system, it will be installed here
 if test ! $(which brew); then
    printf '\n\n\e[33mHomebrew not found. \e[0mInstalling Homebrew...'
-   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
   printf '\n\n\e[0mHomebrew found. Continuing...'
 fi
