@@ -54,7 +54,7 @@ CASKS=(
 )
 
 printf '\n\nInstalling cask apps...\n'
-brew cask install ${CASKS[@]}
+brew install --cask ${CASKS[@]}
 
 printf '\n\nUpdating npm...\n'
 npm install -g npm
